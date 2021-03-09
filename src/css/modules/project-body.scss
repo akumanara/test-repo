@@ -1,0 +1,29 @@
+.project-body {
+  &__raw {
+    max-width: 75rem;
+    margin: 0 auto;
+
+
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__gallery {}
+
+  &__gallery-img {
+    display: block;
+    padding-top: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    margin-bottom: 3rem;
+    cursor: pointer;
+
+    @include when-less('sm') {
+      margin-bottom: 2rem;
+    }
+  }
+}

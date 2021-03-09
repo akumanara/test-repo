@@ -1,0 +1,67 @@
+.hp-facilities {
+  & {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    color: $light;
+
+    @include when-less('sm') {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__container {
+    height: 65rem;
+    max-height: 80vh;
+    // background-color: blue;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 5rem;
+    display: flex;
+
+    @include when-less('xxl') {
+      padding: 3rem;
+      height: 60rem;
+    }
+
+    @include when-less('xl') {
+      padding: 2rem;
+      height: 40rem;
+    }
+
+    @include when-less('md') {
+      height: 48rem;
+    }
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .6;
+  }
+
+  &__copy {
+    position: relative;
+    z-index: 1;
+    max-width: 85rem;
+    margin-top: auto;
+
+    @include when-less('sm') {
+      margin-bottom: auto;
+    }
+  }
+
+  &__copy-title {
+    margin-bottom: 3rem;
+  }
+
+  &__copy-body {
+    margin-bottom: 3rem;
+  }
+}

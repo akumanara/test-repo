@@ -1,0 +1,19 @@
+.tos {
+  &__title {
+    margin-bottom: 6rem;
+
+    @include when-less('sm') {
+      margin-bottom: 3rem;
+
+    }
+  }
+
+  p {
+    margin-bottom: 3rem;
+
+    @include when-less('sm') {
+      margin-bottom: 1.5rem;
+
+    }
+  }
+}

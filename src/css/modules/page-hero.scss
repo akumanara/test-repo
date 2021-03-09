@@ -1,0 +1,139 @@
+.page-hero {
+  padding-bottom: 10rem;
+
+
+
+  @include when-less('xl') {
+    padding-bottom: 0;
+  }
+
+  &__inner {
+    height: 100vh;
+    max-height: 85rem;
+    min-height: 60rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $light;
+
+    &--services {
+      max-height: unset;
+    }
+
+    @include when-less('md') {
+      height: 80vh;
+
+      &--services {
+        height: 100vh;
+      }
+    }
+  }
+
+  &__title {
+    padding-left: 12rem;
+    padding-right: 12rem;
+    position: relative;
+    // z-index: 999;
+
+    @include when-less('xxl') {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    @include when-less('xxl') {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary;
+    z-index: -1;
+  }
+
+  &__bg-img-parent {
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    width: calc(100% - 22rem);
+    height: 43rem;
+    overflow: hidden;
+
+    @include when-less('xxl') {
+      width: calc(100% - 10rem);
+    }
+
+    @include when-less('xl') {
+      bottom: 0;
+      width: 100%;
+      height: 30rem;
+    }
+
+    @include when-less('sm') {
+      height: 24rem;
+    }
+  }
+
+  &__bg-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: $trans;
+    transition-duration: 20s;
+    transition-timing-function: linear;
+    // z-index: 1000;
+
+
+    .is-loaded & {
+      transform: scale(1.2);
+    }
+
+    // &--map::after {
+    //   display: none;
+    // }
+
+    .is-loaded &--map {
+      transform: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: .4;
+      pointer-events: none;
+    }
+  }
+
+  .map-responsive {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    // z-index: 1000;
+  }
+
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    // z-index: 1000;
+  }
+
+
+}

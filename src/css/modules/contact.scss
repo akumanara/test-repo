@@ -1,0 +1,148 @@
+.contact {
+  &__container {
+    display: flex;
+
+    @include when-less('xl') {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info {
+    max-width: 53rem;
+    margin-right: 3rem;
+
+    @include when-less('xl') {
+      max-width: unset;
+    }
+  }
+
+  &__info-box {
+    margin-bottom: 6rem;
+
+    @include when-less('sm') {
+      margin-bottom: 3rem;
+
+    }
+  }
+
+  &__info-box-title {
+    margin-bottom: 3rem;
+
+    @include when-less('sm') {
+      margin-bottom: 1.5rem;
+
+    }
+  }
+
+  &__info-box-content {}
+
+  &__form {
+    width: 100%;
+    max-width: 80rem;
+    margin-left: auto;
+
+    @include when-less('xl') {
+      max-width: unset;
+    }
+  }
+
+
+  label {
+    margin-bottom: .5rem;
+    display: inline-block;
+  }
+
+  input {
+    background-color: $gray;
+    border: 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  select {
+    background-color: $gray;
+    border: 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+
+
+  textarea {
+    background-color: $gray;
+    border: 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+    resize: none;
+  }
+
+
+  /* Customize the label (the container) */
+  &__checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 1rem;
+  }
+
+  /* Hide the browser's default checkbox */
+  &__checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  &__checkmark {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: 1px solid $light;
+    transition: $trans;
+
+    &.dark {
+      border: 1px solid $dark;
+    }
+  }
+
+
+  &__checkbox input:checked~&__checkmark {
+    background-color: $light;
+
+    &.dark {
+      background-color: $dark;
+    }
+  }
+
+  // button {
+  //   margin-top: 3rem;
+  //   border: 0;
+  //   background-color: $primary;
+  //   padding: 1.5rem 2rem;
+  //   color: $light;
+  //   font-weight: 700;
+  //   display: flex;
+  //   align-items: center;
+
+  //   cursor: pointer;
+
+  //   span {
+  //     margin-right: 3rem;
+  //   }
+
+  //   img {}
+  // }
+
+
+}

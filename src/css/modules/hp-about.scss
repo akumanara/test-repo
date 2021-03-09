@@ -1,0 +1,101 @@
+.hp-about {
+  margin-top: -8rem;
+  color: $light;
+
+  @include when-less('sm') {
+    margin-top: 0;
+  }
+
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $primary;
+    z-index: -1;
+    width: calc(100% - 20rem);
+
+    @include when-less('xxl') {
+      width: calc(100% - 15rem);
+    }
+
+    @include when-less('xl') {
+      width: calc(100% - 3rem);
+    }
+
+    @include when-less('md') {
+      width: 100%;
+    }
+
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    @include when-less('md') {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // height: 67rem;
+    padding-top: 60%;
+    flex-shrink: 0;
+    transform: translateX(3.5rem);
+    width: 100%;
+    max-width: 53rem;
+
+    @include when-less('xxl') {
+      max-width: 38rem;
+      padding-top: 50%;
+      transform: translateX(1.5rem);
+    }
+
+    @include when-less('xl') {
+      max-width: 33rem;
+      padding-top: 70%;
+      transform: none;
+    }
+
+    @include when-less('md') {
+      width: 100%;
+      order: 2;
+      padding-top: 60%;
+      max-width: none;
+      margin-top: 3rem;
+    }
+  }
+
+  &__copy {
+    transform: translateX(-3.5rem);
+    align-self: center;
+    width: 100%;
+    max-width: 49rem;
+
+    @include when-less('xxl') {
+      transform: translateX(-1.5rem);
+    }
+
+    @include when-less('xl') {
+      transform: translateX(-6rem);
+    }
+
+    @include when-less('md') {
+      width: 100%;
+      order: 1;
+      transform: none;
+      max-width: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+}

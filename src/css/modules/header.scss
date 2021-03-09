@@ -1,0 +1,336 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 4rem;
+  display: flex;
+  // outline: 2px solid $dark;
+  align-items: center;
+
+  @include when-less('xxl') {
+    padding: 2rem 4rem;
+  }
+
+  @include when-less('lg') {
+    padding: 3rem 2rem;
+  }
+
+  &.open {}
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary;
+    z-index: -1;
+    transform-origin: top left;
+  }
+
+  &__logo {
+    transition: $trans;
+
+    img {
+      display: block;
+
+      @include when-less('lg') {
+        max-width: 12rem;
+      }
+    }
+
+    .scrolled & {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .open & {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    user-select: none;
+    margin-right: 3rem;
+    transition: $trans;
+
+    @include when-less('lg') {
+      margin-right: 1.5rem;
+    }
+
+    .scrolled & {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .open & {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__lang-active {
+    display: flex;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+
+    transition: $trans;
+
+
+
+  }
+
+  &__lang-active-copy {
+    margin-right: .5rem;
+    position: relative;
+    overflow: hidden;
+    color: $light;
+
+
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-100%);
+      transition: $trans2;
+    }
+
+
+    & span {
+      transition: $trans2;
+      display: inline-block;
+    }
+
+
+    .active & {
+      color: $primary;
+    }
+  }
+
+
+  &__lang-active:hover &__lang-active-copy::after {
+    transform: translateY(0);
+  }
+
+  &__lang-active:hover &__lang-active-copy span {
+    transform: translateY(100%);
+  }
+
+
+  &__lang-active-icon {
+    width: 1rem;
+    position: relative;
+    color: $light;
+    transition: $trans;
+
+
+    .active & {
+      color: $primary;
+    }
+  }
+
+  &__lang-active-icon-plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // transition: $trans;
+
+    opacity: 1;
+
+    .active & {
+      opacity: 0;
+    }
+  }
+
+  &__lang-active-icon-minus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // transition: $trans;
+    opacity: 0;
+
+    .active & {
+      opacity: 1;
+    }
+  }
+
+
+  &__lang-dp {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    transition: $trans2;
+    opacity: 0;
+    pointer-events: none;
+
+
+    .active & {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__lang-dp-link {
+    padding: 1.5rem 2rem;
+    display: inline-block;
+    transition: $trans;
+    width: 100%;
+    color: $primary;
+
+    &:hover {
+      background-color: $gray;
+    }
+  }
+
+  &__lang-bg {
+    background-color: $light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    transition: $trans2;
+
+    .active & {
+      height: 300%;
+    }
+  }
+
+  &__burger {
+    width: 6.8rem;
+    height: 6.8rem;
+    background-color: $primary;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: $trans;
+    flex-shrink: 0;
+
+    &.active {
+      background-color: $light;
+    }
+
+    @include when-less('lg') {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  &__burger-top-line {
+    position: absolute;
+    width: 2.2rem;
+    height: 2px;
+    background-color: transparent;
+    top: calc(50% - 4px);
+    left: 50%;
+    transform: translateX(-1.1rem);
+
+
+    transition: top $trans-time1 $trans-easing .3s,
+      background-color $trans-time1 $trans-easing,
+      transform $trans-time1 $trans-easing;
+
+    .active & {
+      top: 50%;
+      transform: translateX(-1.1rem) rotate(-45deg);
+
+
+      transition: top $trans-time1 $trans-easing,
+        background-color $trans-time1 $trans-easing,
+        transform $trans-time1 $trans-easing .3s;
+    }
+
+
+  }
+
+  &__burger-bottom-line {
+    position: absolute;
+    width: 2.2rem;
+    height: 2px;
+    background-color: transparent;
+    top: calc(50% + 4px);
+    left: 50%;
+    transform: translateX(-1.1rem);
+    transition: top $trans-time1 $trans-easing .3s,
+      background-color $trans-time1 $trans-easing,
+      transform $trans-time1 $trans-easing;
+
+    .active & {
+      top: 50%;
+      transform: translateX(-1.1rem) rotate(45deg);
+
+
+
+      transition: top $trans-time1 $trans-easing,
+        background-color $trans-time1 $trans-easing,
+        transform $trans-time1 $trans-easing .3s;
+    }
+  }
+
+
+
+  &__burger-line {
+    overflow: hidden;
+  }
+
+  &__burger-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $light;
+    transition: $trans2;
+
+    .active & {
+      background-color: $primary;
+    }
+  }
+
+  &__burger-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $light;
+    transition: $trans2;
+    transform: translateX(calc(-100% - 8px));
+
+    .active & {
+      background-color: $primary;
+    }
+  }
+
+  &__burger:hover &__burger-line::after {
+    transform: translateX(calc(100% + 8px));
+  }
+
+  &__burger:hover &__burger-line::before {
+    transform: translateX(0);
+  }
+
+  &__burger-line:nth-child(2)::after {
+    transition-delay: .1s;
+  }
+
+  &__burger-line:nth-child(2)::before {
+    transition-delay: .1s;
+  }
+
+
+}

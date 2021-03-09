@@ -1,0 +1,167 @@
+/* ----------  Root vars  ---------- */
+:root {
+  // --header-height: 150px;
+}
+
+
+
+@import 'swiper/swiper-bundle';
+@import 'glightbox/dist/css/glightbox';
+
+
+/* ----------  Colors  ---------- */
+$light: #fefefe;
+$dark: #1A3854;
+$primary: #1a3854;
+$gray: #f3f3f3;
+$gray2: #c4c4c4;
+
+//unused
+$lightgray: #f8f8f8;
+$success: #00ff00;
+$error: #ff0000;
+
+/* ----------  project specifics  ---------- */
+body {
+  background-color: $light;
+  color: $dark;
+}
+
+// * {
+//   outline: 0;
+// }
+
+/* ----------  transitions  ---------- */
+$trans-easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+$trans-time1: 0.3s;
+$trans-time2: 0.6s;
+$trans-time3: 1.2s;
+$trans: all $trans-time1 $trans-easing;
+$trans2: all $trans-time2 $trans-easing;
+$trans3: all $trans-time3 $trans-easing;
+
+
+.rellax {
+  transition: $trans2;
+  // transition-timing-function: ease-out;
+  transition-duration: 2s;
+}
+
+
+/* ----------  helper classes  ---------- */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.animate {
+  will-change: transform;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+.color-dark {
+  color: $dark;
+}
+
+.color-light {
+  color: $light;
+}
+
+
+.gray-bg {
+  background-color: $gray;
+}
+
+.img-round {
+  border-radius: 20px;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding-left: 2rem;
+}
+
+// will cause the link to take on the colour of its parent and remove the underline
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.text-error {
+  color: $error;
+}
+
+// @media only screen and (max-width: 1439px) {}
+
+// @media only screen and (max-width: 1199px) {}
+
+// @media only screen and (max-width: 991px) {}
+
+// @media only screen and (max-width: 767px) {}
+
+// @media only screen and (max-width: 575px) {}

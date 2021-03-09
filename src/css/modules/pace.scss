@@ -1,0 +1,25 @@
+.pace {
+  pointer-events: none;
+  user-select: none;
+}
+
+.pace-progress {
+  opacity: 1;
+  transition: $trans2;
+}
+
+.pace-inactive .pace-progress {
+  transition-delay: .1s;
+  height: 0 !important;
+}
+
+.pace .pace-progress {
+  background: $primary;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 6px;
+
+}

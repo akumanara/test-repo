@@ -1,0 +1,55 @@
+.hero {
+  height: 100vh;
+  max-height: 90rem;
+  // min-height: 70rem;
+  display: flex;
+  position: relative;
+  color: $light;
+  overflow: hidden;
+
+  @include when-less('sm') {
+    height: calc(100vh - 3rem);
+  }
+
+  &__bg-parent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: $trans;
+    transition-duration: 20s;
+    transition-timing-function: linear;
+
+    .is-loaded & {
+      transform: scale(1.2);
+    }
+  }
+
+  &__bg {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__copy-container {
+    align-self: flex-end;
+    margin-bottom: 17rem;
+    width: 100%;
+
+    @include when-less('sm') {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__copy {
+    max-width: 90rem;
+  }
+}

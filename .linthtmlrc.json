@@ -1,0 +1,9 @@
+{
+  "indent-width": 0,
+  "indent-style": "spaces",
+  "class-style": "bem",
+  "tag-bans": ["center"],
+  "attr-bans": [""],
+  "id-class-no-ad": false,
+  "line-end-style": false
+}

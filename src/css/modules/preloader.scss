@@ -1,0 +1,22 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primary;
+  z-index: 9999;
+  transition: $trans;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .footer__top-circle {
+    margin: auto !important;
+  }
+
+  &.done {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

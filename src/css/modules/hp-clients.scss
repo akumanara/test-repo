@@ -1,0 +1,51 @@
+.hp-clients {
+  &__title {
+    max-width: 50rem;
+    margin-bottom: 3rem;
+  }
+
+  &__copy {
+    max-width: 80rem;
+  }
+
+  &__section {}
+
+  &__section-title {
+    min-width: 20rem;
+    border-bottom: 4px solid $primary;
+    display: inline-block;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-bottom: 4.5rem;
+
+    @include when-less('xxl') {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__marquee {
+    margin-bottom: 3rem;
+
+    @include when-less('xxl') {
+      margin-bottom: 1.5rem;
+    }
+
+    &>div {
+      display: flex;
+      align-items: center;
+
+      &>span {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &.reverse .animate {
+      animation-direction: reverse;
+    }
+  }
+
+  &__img {
+    padding: 0 4rem;
+  }
+}

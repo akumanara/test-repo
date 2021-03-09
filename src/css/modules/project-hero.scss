@@ -1,0 +1,58 @@
+.project-hero {
+
+  &__inner {
+    padding-top: 20rem;
+    position: relative;
+    color: $light;
+
+    @include when-less('lg') {
+      padding-top: 15rem;
+
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: $primary;
+    z-index: -1;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    img {
+      margin-right: 1rem;
+    }
+  }
+
+  &__title {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__img {
+    height: 44rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: .3;
+    }
+  }
+
+}
